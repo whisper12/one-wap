@@ -2,7 +2,7 @@
   	<div class="content">
   		<p class="item-pic-date">2017 / 05 / 17</p>
   		<p class="issue-no">VOL.1684</p>
-  		<img alt="" class="item-pic-img"src="http://image.wufazhuce.com/Ft_ucFIjHVypUxY_voXO5Za60bcf">
+  		<img alt="" class="item-pic-img"src="https://scontent.cdninstagram.com/t51.2885-15/e35/17934168_197643864081168_8298311750030196736_n.jpg?se=7">
   		<p class="picture-author">摄影 | fenta</p>
   		<p class="picture-content">没有比这件事更为常见：好事归功自己，坏事归罪命运，有理的总是我们，错误的总是命运。</p>
   		<p class="picture-author">拉封丹</p>

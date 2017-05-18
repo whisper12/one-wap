@@ -82,6 +82,7 @@ export default {
 }
 .msg-on,.msg:hover,.msg:active{
   background-image: url(../../assets/msg-on.png);
+  background-size: .7rem;
 }
 .music-on,.music:hover,.music:active{
   background-image: url(../../assets/music-on.png);

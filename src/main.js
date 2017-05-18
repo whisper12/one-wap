@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import stores from './store/stores.js'
-
+import axios from 'axios'
+import vueAxios from 'vue-axios'
 import 'flex.css'
+
+Vue.use(vueAxios,axios)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

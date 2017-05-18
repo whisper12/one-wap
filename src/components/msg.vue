@@ -11,10 +11,10 @@
 import photoDetail from './photo/photoDetail'
 import footer from './common/footer'
 export default {
-  name: 'photo',
+  name: 'msg',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: ''
     }
   },
   components:{

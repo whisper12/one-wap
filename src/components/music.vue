@@ -11,7 +11,7 @@
 import photoDetail from './photo/photoDetail'
 import footer from './common/footer'
 export default {
-  name: 'photo',
+  name: 'music',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
