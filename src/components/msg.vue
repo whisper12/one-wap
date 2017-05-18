@@ -1,25 +1,39 @@
 <template>
   <div class="content">
-    <h1>「ONE · 图文」</h1>
-    <photoDetail></photoDetail>
-    <photoDetail></photoDetail>
+    <h1>「ONE · 小龟」</h1>
+    <msgDetail v-for="item,index in  itemData"  :photoData = "item"  :key="index"></msgDetail>
     <vfooter></vfooter>
   </div>
 </template>
 
 <script>
-import photoDetail from './photo/photoDetail'
+import msgDetail from './msg/msgDetail'
 import footer from './common/footer'
 export default {
-  name: 'msg',
+  name: 'photo',
   data () {
     return {
-      msg: ''
+      itemData: []
     }
   },
   components:{
-    photoDetail,
+    msgDetail,
     'vfooter':footer
+  },
+  computed:{
+    idlist(){
+      return this.$store.getters.getidList
+    }
+  },
+  mounted:function(){
+    this.getphotoData()
+  },
+  methods:{
+    getphotoData:function(){
+      let _url = 'http://123.206.179.42/jiekou/?start=0&count=5'
+      this.$http.get(_url)
+        .then((res) => {this.itemData=res.data})      
+    }
   }
 }
 </script>

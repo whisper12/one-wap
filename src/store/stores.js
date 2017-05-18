@@ -3,17 +3,17 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 export default new Vuex.Store({
 	state : {
-		'searchTop250' : '',
-		'ComingSoon': '',
+		'idList' : '',
+		'photoData': '',
 		'Theaters':'',
 		'city': ''
 	},
 	mutations: {
-		SET_SEARCHTOP250(state, searchTop250) {
-		state.searchTop250 = searchTop250;
+		SET_idList(state, idList) {
+		state.idList = idList;
 		},
-		SET_COMMINGSOON(state,ComingSoon){
-		state.ComingSoon = ComingSoon
+		SET_COMMINGSOON(state,photoData){
+		state.photoData = photoData
 		},
 		SET_THEATERS(state,Theaters){
 		state.Theaters = Theaters
@@ -23,11 +23,11 @@ export default new Vuex.Store({
 		}	
 	},
 	actions: {
-		setSearchTop250({commit}, searchTop250) {
-		commit('SET_SEARCHTOP250', searchTop250)
+		setidList({commit}, idList) {
+		commit('SET_idList', idList)
 	},
-		setComingSoon({commit}, ComingSoon) {
-		commit('SET_COMMINGSOON', ComingSoon)
+		setphotoData({commit}, photoData) {
+		commit('SET_COMMINGSOON', photoData)
 	},
 		setTheaters({commit}, Theaters) {
 		commit('SET_THEATERS', Theaters)
@@ -37,8 +37,8 @@ export default new Vuex.Store({
 		}
 	},
 	getters: {
-		getSearchTop250: (state) => state.searchTop250,
-		getComingSoon: (state) => state.ComingSoon,
+		getidList: (state) => state.idList,
+		getphotoData: (state) => state.photoData,
 		getTheaters: (state) => state.Theaters,
 		getCity: (state) => state.city
 	}

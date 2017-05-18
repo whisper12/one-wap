@@ -1,15 +1,15 @@
 <template>
 <div>
 	<div>
-	  	<div class="content photo" v-if="photoData.content_type==0">
+	  	<div class="content photo">
 	  		<p class="item-pic-date">{{post_date}}</p>
-	  		<p class="issue-no">{{photoData.volume}}</p>
-	  		<img alt="" class="item-pic-img" :src="photoData.img_url">
-	  		<p class="picture-author">{{photoData.title}} | {{photoData.pic_info}}</p>
-	  		<p class="picture-content">{{photoData.forward}}</p>
-	  		<p class="picture-author">{{photoData.words_info}}</p>
+	  		<p class="issue-no">{{photoData.fields.pic_id}}</p>
+	  		<img alt="" class="item-pic-img" :src="'http://123.206.179.42/media/' + photoData.fields.img_file">
+	  		<p class="picture-author">{{photoData.title}} | {{photoData.fields.pic_author}}</p>
+	  		<p class="picture-content">{{photoData.fields.content}}</p>
+	  		<p class="picture-author">{{photoData.fields.pic_author}}</p>
 	  	</div>	
-
+<!-- 
 	  	<div class="content msg" v-if="photoData.content_type==1">
 	  		<p class="sub_title">- {{photoData.tag_list[0].title}} -</p>
 	  		<h2>{{photoData.title}}</h2>
@@ -53,7 +53,7 @@
 	  		<div class="msg-pic-wrap"><img class="item-pic-img" :src="photoData.img_url"></div>
 	  		<p class="msg-content">{{photoData.forward}}</p>
 	  		<p class="mov-name">— —《{{photoData.subtitle}}》</p>
-	  	</div>	  	 	
+	  	</div>	   -->	 	
   	</div>
 </div>
 </template>
@@ -73,7 +73,7 @@ export default {
   },
   computed:{
   	post_date(){
-  		return this.photoData.post_date.slice(0,11)
+  		return this.photoData.fields.date.slice(0,11)
   	}
   }
 }
