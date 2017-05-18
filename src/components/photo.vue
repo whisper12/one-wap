@@ -24,7 +24,6 @@ export default {
   mounted:function(){
     this.$http.get('/v2/movie/in_theaters')
       .then((res) => {console.log(res.data)})
-      
   }
 }
 </script>
