@@ -1,25 +1,34 @@
 <template>
   <div class="content">
-    <h1>「ONE · 图文」</h1>
-    <photoDetail></photoDetail>
-    <photoDetail></photoDetail>
+    <h1>「听进去·空」</h1>
+    <musicDetail v-for="item,index in  itemData"  :musicData = "item"  :key="index"></musicDetail>
     <vfooter></vfooter>
   </div>
 </template>
 
 <script>
-import photoDetail from './photo/photoDetail'
+import musicDetail from './music/musicDetail'
 import footer from './common/footer'
 export default {
-  name: 'music',
+  name: 'photo',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      itemData: []
     }
   },
   components:{
-    photoDetail,
+    musicDetail,
     'vfooter':footer
+  },
+  mounted:function(){
+    this.getmusicData()
+  },
+  methods:{
+    getmusicData:function(){
+      let _url = 'http://v3.wufazhuce.com:8000/api/channel/music/more/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android'
+      this.$http.get(_url)
+        .then((res) => {this.itemData=res.data.data})      
+    }
   }
 }
 </script>

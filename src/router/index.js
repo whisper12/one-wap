@@ -13,8 +13,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'photo',
-      component: photo
+      name: 'msg',
+      component: msg
     },
     {
       path: '/photo',
