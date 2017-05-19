@@ -26,7 +26,7 @@ export default {
     }
   },
   mounted:function(){
-    if(!this.idList){
+    if(!this.$store.getters.getidList){
       let _idUrl = 'http://v3.wufazhuce.com:8000/api/onelist/idlist/?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=web'
       this.$http.get(_idUrl)
         .then(res => {

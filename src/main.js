@@ -7,7 +7,8 @@ import stores from './store/stores.js'
 import axios from 'axios'
 import vueAxios from 'vue-axios'
 import 'flex.css'
-
+import './assets/one.css'
+import './assets/m.wufazhuce.com.css'
 Vue.use(vueAxios,axios)
 Vue.config.productionTip = false
 

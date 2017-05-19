@@ -5,7 +5,7 @@
 	  		<p class="item-pic-date">{{post_date}}</p>
 	  		<p class="issue-no">{{photoData.fields.pic_id}}</p>
 	  		<img alt="" class="item-pic-img" :src="'http://123.206.179.42/media/' + photoData.fields.img_file">
-	  		<p class="picture-author">{{photoData.title}} | {{photoData.fields.pic_author}}</p>
+	  		<p class="picture-author">{{photoData.fields.title}} | {{photoData.fields.pic_author}}</p>
 	  		<p class="picture-content">{{photoData.fields.content}}</p>
 	  		<p class="picture-author">{{photoData.fields.pic_author}}</p>
 	  	</div>	

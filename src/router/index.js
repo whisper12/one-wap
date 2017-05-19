@@ -4,6 +4,9 @@ import photo from '@/components/photo'
 import msg from '@/components/msg'
 import music from '@/components/music'
 import mov from '@/components/mov'
+import photoMsg from '@/components/photo/photoMsg'
+import photoQuestion from '@/components/photo/photoQuestion'
+import photoMov from '@/components/photo/photoMov'
 Vue.use(Router)
 
 export default new Router({
@@ -32,6 +35,21 @@ export default new Router({
       path: '/mov',
       name: 'mov',
       component: mov
+    },
+    {
+      path: '/photo/photoMsg/:id',
+      name: 'photoMsg',
+      component: photoMsg
+    },
+    {
+      path: '/photo/photoQuestion/:id',
+      name: 'photoQuestion',
+      component: photoQuestion
+    },
+    {
+      path: '/photo/photoMov/:id',
+      name: 'photoMov',
+      component: photoMov
     }
   ]
 })

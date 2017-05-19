@@ -10,7 +10,7 @@
 	  		<p class="picture-author">{{photoData.words_info}}</p>
 	  	</div>	
 
-	  	<div class="content msg" v-if="photoData.content_type==1">
+	  	<div class="content msg" v-if="photoData.content_type==1" @click="goToPage(photoData.content_id)">
 	  		<p class="sub_title">- {{photoData.tag_list[0].title}} -</p>
 	  		<h2>{{photoData.title}}</h2>
 	  		<p class="msg-author">文 / {{photoData.author.user_name}}</p>
@@ -26,7 +26,7 @@
 	  		<p class="msg-content">{{photoData.forward}}</p>
 	  	</div>
 
-	  	<div class="content msg" v-if="photoData.content_type==3">
+	  	<div class="content msg" v-if="photoData.content_type==3" @click="goToPageQ(photoData.content_id)">
 	  		<p class="sub_title">- 问答 -</p>
 	  		<h2>{{photoData.title}}</h2>
 	  		<p class="msg-author">文 / {{photoData.author.user_name}}</p>
@@ -46,7 +46,7 @@
 	  		<p class="msg-content">{{photoData.forward}}</p>
 	  	</div>	  	
 
-	  	<div class="content msg mov" v-if="photoData.content_type==5">
+	  	<div class="content msg mov" v-if="photoData.content_type==5" @click="goToPageM(photoData.content_id)">
 	  		<p class="sub_title">- 影视 -</p>
 	  		<h2>{{photoData.title}}</h2>
 	  		<p class="msg-author">文 / {{photoData.author.user_name}}</p>
@@ -74,6 +74,20 @@ export default {
   computed:{
   	post_date(){
   		return this.photoData.post_date.slice(0,11)
+  	}
+  },
+  methods:{
+  	goToPage: function(id){
+  		let path = '/photo/photoMsg/'+id
+  		this.$router.push({path:path})
+  	},
+  	goToPageQ: function(id){
+  		let path = '/photo/photoQuestion/'+id
+  		this.$router.push({path:path})
+  	},
+  	goToPageM: function(id){
+  		let path = '/photo/photoMov/'+id
+  		this.$router.push({path:path})
   	}
   }
 }

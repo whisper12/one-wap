@@ -1,5 +1,5 @@
 <template>
-<div class="text-detail"  v-if="pageData">
+<div class="text-detail">
 	<p class="text-title">{{pageData.hp_title}}</p>
 	<hr class="sort-separate-line sort-separate-line15">
 	<p class="text-author">文／{{pageData.hp_author}}</p>
@@ -9,11 +9,11 @@
 	<hr class="sort-separate-line" style="margin-top: 15px;">
 	<div class="page-table">
 		<div style="display:inline-block">
-			<img :src="pageData.author[0].web_url" class="one-image-exclude avater">
+			<img :src="pageData.author[0].web_url" class="one-image-exclude avater" v-if="pageData">
 		</div>
 		<div style="display:inline-block;width:80%;">
-			<p class="page-title">{{pageData.author[0].user_name}}</p>
-			<p class="page-summary">{{pageData.author[0].desc}}</p>
+			<p class="page-title" v-if="pageData">{{pageData.author[0].user_name}}</p>
+			<p class="page-summary" v-if="pageData">{{pageData.author[0].desc}}</p>
 		</div>
 	</div>
 </div>

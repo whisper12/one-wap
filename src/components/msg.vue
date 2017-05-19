@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h1>「ONE · 小龟」</h1>
+    <h1>「吃进去·空」</h1>
     <msgDetail v-for="item,index in  itemData"  :photoData = "item"  :key="index"></msgDetail>
     <vfooter></vfooter>
   </div>
@@ -30,7 +30,7 @@ export default {
   },
   methods:{
     getphotoData:function(){
-      let _url = 'http://123.206.179.42/jiekou/?start=0&count=5'
+      let _url = '/jiekou/?start=0&count=5'
       this.$http.get(_url)
         .then((res) => {this.itemData=res.data})      
     }
