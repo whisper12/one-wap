@@ -1,29 +1,37 @@
 <template>
-  <div class="content">
-    <h1>「看进去·空」</h1>
+  <div class="content" @click="swichFlag(false)">
+    <!-- <h1>「看进去·空」</h1> -->
+    <vnav :class="{'on':flag}" :swichFlag="swichFlag" :text="'「看进去·空」'"></vnav>
     <movDetail v-for="item,index in  itemData"  :movData = "item"  :key="index"></movDetail>
-    <vfooter></vfooter>
+    <!-- <vfooter></vfooter> -->
   </div>
 </template>
 
 <script>
 import movDetail from './mov/movDetail'
-import footer from './common/footer'
+// import footer from './common/footer'
+import nav from './common/navigator'
+
 export default {
   name: 'photo',
   data () {
     return {
-      itemData: []
+      itemData: [],
+      flag:false
     }
   },
   components:{
     movDetail,
-    'vfooter':footer
+    'vnav':nav
+    // 'vfooter':footer
   },
   mounted:function(){
     this.getmusicData()
   },
   methods:{
+    swichFlag:function(item){
+      this.flag = item
+    },    
     getmusicData:function(){
       let _url = 'http://v3.wufazhuce.com:8000/api/channel/movie/more/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android'
       this.$http.get(_url)

@@ -43,7 +43,7 @@ export default {
   	this.$http.get('http://v3.wufazhuce.com:8000/api/movie/detail/'+ id +'?channel=wdj&source=summary&source_id=9095&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android')
   		.then(res => (this.img_url=res.data.data))
   	this.$http.get('http://v3.wufazhuce.com:8000/api/movie/' + id + '/story/1/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android')
-  		.then(res => {console.log(res.data);this.pageData=res.data.data.data[0]})
+  		.then(res => {this.pageData=res.data.data.data[0]})
   }
 }
 </script>

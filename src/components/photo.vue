@@ -1,24 +1,28 @@
 <template>
-  <div class="content">
-    <h1>「ONE · 图文」</h1>
+  <div class="content" @click="swichFlag(false)">
+    <!-- <h1>「ONE · 图文」</h1> -->
+    <vnav :class="{'on':flag}" :swichFlag="swichFlag" :text="'「吃进去·空」'"></vnav>
     <photoDetail v-for="item,index in  itemData"  :photoData = "item"  :key="index"></photoDetail>
-    <vfooter></vfooter>
+    <!-- <vfooter></vfooter> -->
   </div>
 </template>
 
 <script>
 import photoDetail from './photo/photoDetail'
-import footer from './common/footer'
+// import footer from './common/footer'
+import nav from './common/navigator'
 export default {
   name: 'photo',
   data () {
     return {
-      itemData: []
+      itemData: [],
+      flag:false
     }
   },
   components:{
     photoDetail,
-    'vfooter':footer
+    'vnav':nav
+    // 'vfooter':footer
   },
   computed:{
     idlist(){
@@ -38,6 +42,9 @@ export default {
     }
   },
   methods:{
+    swichFlag:function(item){
+      this.flag = item
+    },    
     getphotoData:function(){
       let _url = 'http://v3.wufazhuce.com:8000/api/onelist/'+ this.idlist[0] +'/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=web'
       this.$http.get(_url)
