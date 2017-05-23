@@ -1,6 +1,5 @@
-# one-wap-vue
+# 山寨ONE app
 
-> A Vue.js project
 
 ## Build Setup
 
@@ -13,9 +12,11 @@ npm run dev
 
 # build for production with minification
 npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 技术栈
+```
+基于vue2 + vue-router + vuex + vue-axios重写vue版山寨ONE，使用webpack打包
+```
+### [扫一扫二维码查看效果](http://chijinqukong.top)
+ [![扫一扫二维码查看效果](http://qr.api.cli.im/qr?data=http%253A%252F%252Fchijinqukong.top&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=656aa82ef3207220e6f5042c73dddd88)](http://chijinqukong.top)
