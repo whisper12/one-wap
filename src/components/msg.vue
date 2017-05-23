@@ -94,7 +94,7 @@ export default {
 }
 .ending{
   color: rgba(0, 0, 0, 0.3);
-  padding-bottom: .6rem;
+  padding-bottom: .3rem;
   text-align: center;
 }
 </style>

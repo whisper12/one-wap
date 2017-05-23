@@ -11,7 +11,7 @@
 		<div style="display:inline-block">
 			<img :src="pageData.author[0].web_url" class="one-image-exclude avater">
 		</div>
-		<div style="display:inline-block;width:80%;">
+		<div style="display:inline-block;width:80%;margin-left:10px;">
 			<p class="page-title">{{pageData.author[0].user_name}}</p>
 			<p class="page-summary">{{pageData.author[0].desc}}</p>
 		</div>

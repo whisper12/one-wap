@@ -18,7 +18,7 @@
 	  		<p class="msg-content">{{photoData.forward}}</p>
 	  	</div>
 
-	  	<div class="content msg" v-if="photoData.content_type==2">
+	  	<div class="content msg" v-if="photoData.content_type==2" @click="goToPageS(photoData.item_id)">
 	  		<p class="sub_title">- 连载 -</p>
 	  		<h2>{{photoData.title}}</h2>
 	  		<p class="msg-author">文 / {{photoData.author.user_name}}</p>
@@ -34,7 +34,7 @@
 	  		<p class="msg-content">{{photoData.forward}}</p>
 	  	</div>
 
-	  	<div class="content msg music" v-if="photoData.content_type==4">
+	  	<div class="content msg music" v-if="photoData.content_type==4" @click="goToPageMu(photoData.content_id)">
 	  		<p class="sub_title">- 音乐 -</p>
 	  		<h2>{{photoData.title}}</h2>
 	  		<p class="msg-author">文 / {{photoData.author.user_name}}</p>
@@ -88,6 +88,14 @@ export default {
   	goToPageM: function(id){
   		let path = '/photo/photoMov/'+id
   		this.$router.push({path:path})
+  	},
+  	goToPageMu: function(id){
+  		let path = '/photo/photoMusic/'+id
+  		this.$router.push({path:path})  		
+  	},
+  	goToPageS: function(id){
+  		let path = '/photo/photoSerial/'+id
+  		this.$router.push({path:path})  		
   	}
   }
 }

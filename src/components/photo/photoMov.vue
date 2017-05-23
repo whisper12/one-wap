@@ -10,6 +10,7 @@
 	<!-- <p class="text-author">{{pageData.answerer.user_name}}说</p> -->
 	<div class="text-content" v-html="pageData.content"></div>
 	<p class="text-editor">{{pageData.charge_edt}} {{pageData.editor_email}}</p>
+	<p class="text-editor">{{pageData.copyright}}</p>
 	<!-- <vfooter></vfooter> -->
 <!-- 	<p class="page-sparate-title">作者</p>
 	<hr class="sort-separate-line" style="margin-top: 15px;">

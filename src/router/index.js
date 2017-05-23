@@ -7,6 +7,10 @@ import mov from '@/components/mov'
 import photoMsg from '@/components/photo/photoMsg'
 import photoQuestion from '@/components/photo/photoQuestion'
 import photoMov from '@/components/photo/photoMov'
+import photoMusic from '@/components/photo/photoMusic'
+import about from '@/components/about'
+import photoSerial from '@/components/photo/photoSerial'
+
 Vue.use(Router)
 
 export default new Router({
@@ -50,6 +54,21 @@ export default new Router({
       path: '/photo/photoMov/:id',
       name: 'photoMov',
       component: photoMov
+    },
+    {
+      path: '/photo/photoMusic/:id',
+      name: 'photoMusic',
+      component: photoMusic
+    },
+    {
+      path: '/photo/photoSerial/:id',
+      name: 'photoSerial',
+      component: photoSerial
+    },      
+    {
+      path: '/about',
+      name: 'about',
+      component: about
     }
   ]
 })

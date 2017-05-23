@@ -1,13 +1,16 @@
 <template>
 <div>
 	<div>
-	  	<div class="content msg music" v-if="musicData.content_type==4">
+	  	<div class="content msg music" v-if="musicData.content_type==4" @click="goToPageMu(musicData.content_id)">
 	  		<p class="sub_title">- 音乐 -</p>
 	  		<h2>{{musicData.title}}</h2>
 	  		<p class="msg-author">文 / {{musicData.author.user_name}}</p>
 	  		<div class="msg-pic-wrap">
-	  			<img class="item-pic-img" :src="musicData.img_url">
-	  			<img class="play-btn" src="http://image.wufazhuce.com/play_btn_empty.png">
+	  			<div class="msg-pic-bg"></div>
+	  			<div class="msg-pic-cover">
+		  			<img class="item-pic-img" :src="musicData.img_url">
+		  			<img class="play-btn" src="http://image.wufazhuce.com/play_btn_empty.png">
+	  			</div>
 	  		</div>
 	  		<p class="music-info">{{musicData.music_name}} · {{musicData.audio_author}} · {{musicData.audio_album}}</p>
 	  		<p class="msg-content">{{musicData.forward}}</p>
@@ -35,9 +38,9 @@ export default {
   	}
   },
   methods:{
-  	goToPage: function(id){
-  		let path = '/photo/photoMsg/'+id
-  		this.$router.push({path:path})
+  	goToPageMu: function(id){
+  		let path = '/photo/photoMusic/'+id
+  		this.$router.push({path:path})  		
   	}
   }
 }
@@ -76,7 +79,7 @@ export default {
 	    text-align: center;
 	}
 	.item-pic-img{
-		width: 100%;
+		/*width: 100%;*/
 		display: block;
 		margin-bottom: .5rem;
 	}
@@ -117,13 +120,37 @@ export default {
 		box-sizing: border-box;
 		padding: 0;
 		text-align: center;
+		height: 5.5rem;
+		position: relative;
+	}
+	.msg-pic-bg{
+		position: absolute;
+		box-shadow: 0 0 0.625rem 0.125rem rgba(230, 230, 230, 0.5);
+		left: 0;
+		top: 0;
+		width: 7.8rem;
+		height: 5.5rem;
+		border-radius:0 4rem 4rem 0;
+	}
+	.msg-pic-cover{
+		position: absolute;
+		border-radius: 100%;
+		overflow: hidden;
+		width: 5rem;
+		height: 5rem;
+		left: 50%;
+		margin-left: -2.5rem;
+		margin-top: .25rem;
 	}
 	.music .msg-pic-wrap img:nth-child(1){
-		width: 80%;
-		transform: scale(.8);
-		border-radius: 100%;
+		/*width: auto;*/
+		/*transform: scale(.8);*/
+		/*border-radius: 100%;*/
+		height: 100%;
 		margin:0;
 		display: inline-block;
+		position: relative;
+		max-width: none;
 	}
 	.play-btn{
 		position: absolute;
